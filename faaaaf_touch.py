@@ -1,5 +1,12 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
+
+'''
+adapted from pimenu (https://github.com/splitbrain/pimenu/)
+this code is written for the visual art installation faigh ar ais as an fharraige, by Irish
+visual artist Shane Finan. It controls a touchscreen that starts/stops video playback via subprocess
+on a second monitor. The touchscreen is linked to a Raspberry Pi 3 Model B+
+'''
 import Tkconstants as TkC
 import os
 import subprocess
@@ -220,21 +227,7 @@ class faaaaf_item(Frame):
         :param actions:
         :return:
         """
-        # hide the menu and show a delay screen
-        #self.hide_top()
-        #delay = Frame(self, bg="#2d89ef")
-        #delay.pack(fill=TkC.BOTH, expand=1)
-        #label = Label(delay, text="Executing...", fg="white", bg="#2d89ef", font="Sans 30")
-        #label.pack(fill=TkC.BOTH, expand=1)
-        #self.parent.update()
-
-        # excute shell script
-        #subprocess.call([self.path + '/pimenu.sh'] + actions)
-
-        # remove delay screen and show menu again
-        #delay.destroy()
-        #self.destroy_all()
-        #self.show_top()
+        
 
     def go_back(self):
         """
