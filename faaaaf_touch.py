@@ -3,10 +3,11 @@
 import Tkconstants as TkC
 import os
 import subprocess
+from subprocess import PIPE, Popen
 import sys
-from omxplayer.player import OMXplayer
 from Tkinter import Tk, Frame, Button, Label, PhotoImage
 from math import sqrt, floor, ceil
+import omxcontrol
 
 import yaml
 current_film = ""
@@ -35,7 +36,7 @@ class FlatButton(Button):
         )
 
 
-class PiMenu(Frame):
+class faaaaf_item(Frame):
     framestack = []
     icons = {}
     path = ''
@@ -96,13 +97,13 @@ class PiMenu(Frame):
             back = FlatButton(
                 wrap,
                 text="back",
-                image=self.get_icon("ico/arrow.left"),
+                image=self.get_icon("arrow.left"),
                 command=self.go_back,
             )
             back.set_color("#9CEEAC")  # green
             back.grid(row=0, column=0, padx=1, pady=1, sticky=TkC.W + TkC.E + TkC.N + TkC.S)
             num += 1
-
+        
         # add the new frame to the stack and display it
         self.framestack.append(wrap)
         self.show_top()
@@ -146,8 +147,7 @@ class PiMenu(Frame):
                 btn.set_color(item['color'])
                 
             if 'name' in item:
-                current_film = "omxplayer --no-osd -b faaaaf_films/faaaaf_" + item['name'] + ".mp4"
-                print(current_film)
+                current_film = item['name']
 
             # add buton to the grid
             btn.grid(
@@ -158,6 +158,9 @@ class PiMenu(Frame):
                 sticky=TkC.W + TkC.E + TkC.N + TkC.S
             )
             num += 1
+        
+        #play the films if necessary
+        play_films(num, current_film)
 
     def get_icon(self, name):
         """
@@ -169,11 +172,13 @@ class PiMenu(Frame):
         if name in self.icons:
             return self.icons[name]
 
-        ico = self.path + '/ico/' + name + '.png'
+        ico = self.path + '/ico/' + name + '.gif'
         if not os.path.isfile(ico):
             ico = self.path + '/faaaaf_icons/' + name + '.png'
             if not os.path.isfile(ico):
-                ico = self.path + '/ico/cancel.gif'
+                ico = self.path + '/faaaaf_icons/faaaaf_screens/faaaaf_img_' + name + '.png'
+                if not os.path.isfile(ico):
+                    ico = self.path + '/faaaaf_icons/arrow.gif'
 
         self.icons[name] = PhotoImage(file=ico)
         return self.icons[name]
@@ -190,15 +195,14 @@ class PiMenu(Frame):
         show the top page
         :return:
         """
+        os.system("killall omxplayer.bin")
         self.framestack[len(self.framestack) - 1].pack(fill=TkC.BOTH, expand=1)
-        os.system("killall omxplayer")
 
     def destroy_top(self):
         """
         destroy the top page
         :return:
         """
-        os.system(current_film)
         self.framestack[len(self.framestack) - 1].destroy()
         self.framestack.pop()
 
@@ -212,7 +216,7 @@ class PiMenu(Frame):
 
     def go_action(self, actions):
         """
-        execute the action script
+        execute the actionsudo apt-get install -y libdbus-1{,-dev} script
         :param actions:
         :return:
         """
@@ -244,6 +248,11 @@ class PiMenu(Frame):
             self.destroy_top()
             self.show_top()
 
+def play_films(stack_level, curr_film):
+    args = "omxplayer -o local --win \"200 200 400 400\" --no-osd"
+    faaaaf_film_path = "faaaaf_films/faaaaf_" + curr_film + ".mp4"
+    if (stack_level > 0):
+        playing = subprocess.Popen(['omxplayer','-o','local','--win','200,200,400,400','--no-osd',faaaaf_film_path], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True,bufsize=0)
 
 def main():
     root = Tk()
@@ -251,7 +260,7 @@ def main():
     root.wm_title('faigh ar ais as an fharraige')
     if len(sys.argv) > 1 and sys.argv[1] == 'fs':
         root.wm_attributes('-fullscreen', True)
-    PiMenu(root)
+    faaaaf_item(root)
     root.mainloop()
 
 

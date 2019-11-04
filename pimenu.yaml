@@ -1,0 +1,267 @@
+# Menu-Setup.
+#
+# name and label are required for each item
+# color and icon are optional
+# colours used are as follows, based on the icon/word type
+# air = #A0CEF6
+# water = #A8B2F2
+# path = #C3C2C9
+# earth = #EFD8CC
+#
+---
+  - 
+    name: "0"
+    label: "sponketts"
+    color: "#EFD8CC"
+    icon: "earth"
+    items: 
+      - 
+        name : "0"
+        label: "sponketts"
+        color: "#DBD8BF"
+        icon : "0"
+      - 
+        name : "0"
+        label: "tree roots that hang over an exposed dirch or verge"
+        color: "#EFD8CC"
+        icon : "definition"
+  -
+    name: "1"
+    label: "sleech"
+    color: "#EFD8CC"
+    icon: "earth"
+    items:
+      - 
+        name : "1"
+        label: "sleech"
+        color: "#DBD8BF"
+        icon : "1"
+      -
+        name : "1"
+        label: "thick river mud\nsludge or slime\noften used as fertiliser"
+        color: "#EFD8CC"
+        icon : "definition"
+  -
+    name: "2"
+    label: "poppling"
+    color: "#A8B2F2"
+    icon: "water"
+    items:
+      - 
+        name : "2"
+        label: "poppling"
+        color: "#DBD8BF"
+        icon : "2"
+      -
+        name : "2"
+        label: "of a choppy sea/boiling water\nto heave or to boil,\nof a stream\nto move with a\ntumbling motion"
+        color: "#A8B2F2"
+        icon : "definition"
+  -
+    name: "3"
+    label: "twitten"
+    color: "#C3C2C9"
+    icon: "path"
+    items:
+      - 
+        name : "3"
+        label: "twitten"
+        color: "#DBD8BF"
+        icon : "3"
+      -
+        name : "3"
+        label: "a narrow path leading between /ntwo walls, hedges, \nor buildings,/nespecially in older \nparts of town"
+        color: "#C3C2C9"
+        icon : "definition"
+  -
+    name: "4"
+    label: "sun-scald"
+    color: "#A0CEF6"
+    icon: "air"
+    items:
+      - 
+        name : "4"
+        label: "sun-scald"
+        color: "#DBD8BF"
+        icon : "4"
+      -
+        name : "4"
+        label: "patch of very\nbright water on a\nsurface, such as\na lake"
+        color: "#A0CEF6"
+        icon : "definition"
+  -
+    name: "5"
+    label: "lasus"
+    color: "#A8B2F2"
+    icon: "water"
+    items:
+      - 
+        name : "5"
+        label: "lasus"
+        color: "#DBD8BF"
+        icon : "5"
+      -
+        name : "5"
+        label: "water meadow"
+        color: "#A8B2F2"
+        icon : "definition"
+  -
+    name: "6"
+    label: "crup"
+    color: "#A0CEF6"
+    icon: "air"
+    items:
+      - 
+        name : "6"
+        label: "crup"
+        color: "#DBD8BF"
+        icon : "6"
+      -
+        name : "6"
+        label: "crisp, frosty\na grass path crips up\nwhen frost makes it\nfeel crunchy underfoot"
+        color: "#A0CEF6"
+        icon : "definition"
+  -
+    name: "7"
+    label: "boulder-head"
+    color: "#EFD8CC"
+    icon: "earth"
+    items:
+      - 
+        name : "7"
+        label: "boulder-head"
+        color: "#DBD8BF"
+        icon : "7"
+      -
+        name : "7"
+        label: "a row of piles driven before a sea-dike to resist the action of waves"
+        color: "#EFD8CC"
+        icon : "definition"
+  -
+    name: "8"
+    label: "carfax"
+    color: "#C3C2C9"
+    icon: "path"
+    items:
+      - 
+        name : "8"
+        label: "carfax"
+        color: "#DBD8BF"
+        icon : "8"
+      -
+        name : "8"
+        label: "place where four or more roads meet but do not form a cross"
+        color: "#C3C2C9"
+        icon : "definition"
+  -
+    name: "9"
+    label: "shuckish"
+    color: "#A8B2F2"
+    icon: "water"
+    items:
+      - 
+        name : "9"
+        label: "shuckish"
+        color: "#DBD8BF"
+        icon : "9"
+      -
+        name : "9"
+        label: "unpleasant, unsettled, showery \n especially applied to weather"
+        color: "#A8B2F2"
+        icon : "definition"
+  -
+    name: "10"
+    label: "nover"
+    color: "#EFD8CC"
+    icon: "earth"
+    items:
+      - 
+        name : "10"
+        label: "nover"
+        color: "#DBD8BF"
+        icon : "10"
+      -
+        name : "10"
+        label: "high land above a\nsteep bank\nor face"
+        color: "#EFD8CC"
+        icon : "definition"
+  -
+    name: "11"
+    label: "quill"
+    color: "#A8B2F2"
+    icon: "water"
+    items:
+      - 
+        name : "11"
+        label: "quill"
+        color: "#DBD8BF"
+        icon : "11"
+      -
+        name : "11"
+        label: "spring \n (of water), \n alt: whistle \n of a steam engine"
+        color: "#A8B2F2"
+        icon : "definition"
+  -
+    name: "12"
+    label: "swank"
+    color: "#EFD8CC"
+    icon: "earth"
+    items:
+      - 
+        name : "12"
+        label: "swank"
+        color: "#DBD8BF"
+        icon : "12"
+      -
+        name : "12"
+        label: "dell, \ndamp, \nhollow"
+        color: "#EFD8CC"
+        icon : "definition"
+  -
+    name: "13"
+    label: "throw"
+    color: "#C3C2C9"
+    icon: "path"
+    items:
+      - 
+        name : "13"
+        label: "throw"
+        color: "#DBD8BF"
+        icon : "13"
+      -
+        name : "13"
+        label: "throughway, \npublic way"
+        color: "#C3C2C9"
+        icon : "definition"
+  -
+    name: "14"
+    label: "lag"
+    color: "#A8B2F2"
+    icon: "water"
+    items:
+      - 
+        name : "14"
+        label: "lag"
+        color: "#DBD8BF"
+        icon : "14"
+      -
+        name : "14"
+        label: "narrow, marshy meadow,\nusually by the\nside of\na stream"
+        color: "#A8B2F2"
+        icon : "definition"
+  -
+    name: "15"
+    label: "iombha"
+    color: "#A8B2F2"
+    icon: "water"
+    items:
+      - 
+        name : "15"
+        label: "iombha"
+        color: "#DBD8BF"
+        icon : "15"
+      -
+        name : "15"
+        label: "gaeilge\na sinking boat\nalt:\nany place where\nthere is a danger\nof drowning"
+        color: "#A8B2F2"
+        icon : "definition"
