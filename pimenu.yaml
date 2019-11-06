@@ -118,7 +118,7 @@
         icon : "6"
       -
         name : "6"
-        label: "crisp, frosty\na grass path crips up\nwhen frost makes it\nfeel crunchy underfoot"
+        label: "crisp, frosty\na grass path crups up\nwhen frost makes it\nfeel crunchy underfoot"
         color: "#A0CEF6"
         icon : "definition"
   -
@@ -155,50 +155,50 @@
         icon : "definition"
   -
     name: "9"
-    label: "shuckish"
-    color: "#A8B2F2"
-    icon: "water"
-    items:
-      - 
-        name : "9"
-        label: "shuckish"
-        color: "#DBD8BF"
-        icon : "9"
-      -
-        name : "9"
-        label: "unpleasant, unsettled, showery \n especially applied to weather"
-        color: "#A8B2F2"
-        icon : "definition"
-  -
-    name: "10"
     label: "nover"
     color: "#EFD8CC"
     icon: "earth"
     items:
       - 
-        name : "10"
+        name : "9"
         label: "nover"
         color: "#DBD8BF"
-        icon : "10"
+        icon : "9"
       -
-        name : "10"
+        name : "9"
         label: "high land above a\nsteep bank\nor face"
         color: "#EFD8CC"
         icon : "definition"
   -
-    name: "11"
+    name: "10"
     label: "quill"
     color: "#A8B2F2"
     icon: "water"
     items:
       - 
-        name : "11"
+        name : "10"
         label: "quill"
+        color: "#DBD8BF"
+        icon : "10"
+      -
+        name : "10"
+        label: "spring \n (of water), \n alt: whistle \n of a steam engine"
+        color: "#A8B2F2"
+        icon : "definition"
+  -
+    name: "11"
+    label: "shuckish"
+    color: "#A8B2F2"
+    icon: "water"
+    items:
+      - 
+        name : "11"
+        label: "shuckish"
         color: "#DBD8BF"
         icon : "11"
       -
         name : "11"
-        label: "spring \n (of water), \n alt: whistle \n of a steam engine"
+        label: "unpleasant, unsettled, showery \n especially applied to weather"
         color: "#A8B2F2"
         icon : "definition"
   -

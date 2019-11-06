@@ -14,10 +14,15 @@ from subprocess import PIPE, Popen
 import sys
 from Tkinter import Tk, Frame, Button, Label, PhotoImage
 from math import sqrt, floor, ceil
-import omxcontrol
+#import omxcontrol
+import paramiko
+from paramiko import SSHClient
 
 import yaml
-current_film = ""
+
+ssh = paramiko.SSHClient()
+ssh.load_system_host_keys()
+ssh.connect(hostname="192.168.8.105", username="pi", password="faaaaf")
 
 class FlatButton(Button):
     def __init__(self, master=None, cnf=None, **kw):
@@ -202,7 +207,8 @@ class faaaaf_item(Frame):
         show the top page
         :return:
         """
-        os.system("killall omxplayer.bin")
+        (stdin, stdout, stderr) = ssh.exec_command("killall omxplayer.bin")
+        #os.system("killall omxplayer.bin")
         self.framestack[len(self.framestack) - 1].pack(fill=TkC.BOTH, expand=1)
 
     def destroy_top(self):
@@ -243,9 +249,11 @@ class faaaaf_item(Frame):
 
 def play_films(stack_level, curr_film):
     args = "omxplayer -o local --win \"200 200 400 400\" --no-osd"
-    faaaaf_film_path = "faaaaf_films/faaaaf_" + curr_film + ".mp4"
+    omx_arguments = "omxplayer --loop -o local --no-osd "
+    faaaaf_film_path = "Desktop/faaaaf/faaaaf_" + curr_film + ".mp4"
     if (stack_level > 0):
-        playing = subprocess.Popen(['omxplayer','-o','local','--win','200,200,400,400','--no-osd',faaaaf_film_path], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True,bufsize=0)
+        #playing = subprocess.Popen(['omxplayer','-o','local','--win','200,200,400,400','--no-osd',faaaaf_film_path], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True,bufsize=0)
+        (stdin, stdout, stderr) = ssh.exec_command(omx_arguments+faaaaf_film_path)
 
 def main():
     root = Tk()
@@ -254,6 +262,7 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == 'fs':
         root.wm_attributes('-fullscreen', True)
     faaaaf_item(root)
+    root.config(cursor='none')
     root.mainloop()
 
 
